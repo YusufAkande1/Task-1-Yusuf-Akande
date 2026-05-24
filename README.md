@@ -127,9 +127,5 @@ ORDER BY revenue DESC;
 
 ### Author
 Yusuf Akande
-
 Aspiring Data Analyst passionate about transforming raw data into actionable insights using Python, SQL, Excel, and Power BI.
 
-Aspiring Data Analyst passionate about transforming raw data into actionable insights using Python, SQL, Excel, and Power BI.
-import pandas as pd
-import numpy as np
