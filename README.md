@@ -23,8 +23,6 @@ The goal of the project was to transform raw sales data into meaningful business
 - PostgreSQL (pgAdmin)
 - SQL
 
----
-
 # Project Workflow
 
 ## 1. Data Cleaning & Preparation
@@ -39,7 +37,6 @@ The raw dataset was cleaned using Excel and Python.
 - Validated numerical calculations
 
 ### Python Libraries Used
-```python
 import pandas as pd
 
 # Fill missing values
