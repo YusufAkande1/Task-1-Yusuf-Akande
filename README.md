@@ -13,7 +13,7 @@ The goal of the project was to transform raw sales data into meaningful business
 
 ---
 
-# Tools & Technologies Used
+## Tools & Technologies Used
 
 - Excel
 - Python
@@ -25,7 +25,7 @@ The goal of the project was to transform raw sales data into meaningful business
 
 ## Project Workflow
 
-# 1. Data Cleaning & Preparation
+### 1. Data Cleaning & Preparation
 
 The raw dataset was cleaned using Excel and Python.
 
@@ -36,33 +36,33 @@ Tasks Performed
 - Standardized text columns
 - Validated numerical calculations
 
-## Python Libraries Used
+#### Python Libraries Used
 ```
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 ```
-# Example Cleaning Code
+#### Example Cleaning Code
 ```
 python
 
-#Fill missing values
+##### Fill missing values
 df["CouponCode"] = df["CouponCode"].fillna("NO COUPON")
 
-#Remove duplicates
+##### Remove duplicates
 df = df.drop_duplicates()
 
-#Clean text columns
+##### Clean text columns
 text_cols = df.select_dtypes(include="object").columns
 
 for col in text_cols:
     df[col] = df[col].str.strip()
 ```
-## 2. Exploratory Data Analysis (EDA)
+### 2. Exploratory Data Analysis (EDA)
 
 EDA was performed to understand trends, patterns, and relationships within the dataset.
 
-# Analysis Conducted
+#### Analysis Conducted
 - Top-selling products
 - Revenue analysis
 - Payment method analysis
@@ -70,7 +70,7 @@ EDA was performed to understand trends, patterns, and relationships within the d
 - Order status distribution
 - Customer spending behavior
 
-# Example Visualization Code
+##### Example Visualization Code
 ```
 python
 
@@ -82,11 +82,11 @@ plt.title("Top Selling Products")
 
 plt.show()
 ```
-## 3. SQL Business Analysis
+### 3. SQL Business Analysis
 
 PostgreSQL was used to perform business-focused analysis on the cleaned dataset.
 
-# SQL Analysis Included
+#### SQL Analysis Included
 - Total revenue analysis
 - Top-selling products
 - Monthly revenue trends
@@ -94,7 +94,7 @@ PostgreSQL was used to perform business-focused analysis on the cleaned dataset.
 - Customer purchase behavior
 - Order status analysis
 
-# Example SQL Query
+##### Example SQL Query
 ```
 SELECT 
     Product,
@@ -103,14 +103,14 @@ FROM sales_data
 GROUP BY Product
 ORDER BY revenue DESC;
 ```
-## Key Insights
+### Key Insights
 - Certain products generated significantly higher revenue
 - Customer payment preferences were identified
 - Sales varied across different months
 - Revenue trends provided useful business insights
 - Data cleaning improved data consistency and reliability
 
-## Skills Demonstrated
+### Skills Demonstrated
 - Data Cleaning
 - Exploratory Data Analysis
 - SQL Querying
@@ -119,13 +119,13 @@ ORDER BY revenue DESC;
 - Python Programming
 - PostgreSQL
 
-## Future Improvements
+### Future Improvements
 - Build an interactive Power BI dashboard
 - Add advanced SQL analysis
 - Perform predictive analytics
 - Automate reporting workflow
 
-## Author
+### Author
 Yusuf Akande
 
 Aspiring Data Analyst passionate about transforming raw data into actionable insights using Python, SQL, Excel, and Power BI.
