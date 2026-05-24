@@ -37,7 +37,7 @@ Tasks Performed
 - Validated numerical calculations
 
 # Python Libraries Used
-'''
+```
 python
 import pandas as pd
 
@@ -52,7 +52,7 @@ text_cols = df.select_dtypes(include="object").columns
 
 for col in text_cols:
     df[col] = df[col].str.strip()
-'''
+```
 # 2. Exploratory Data Analysis (EDA)
 
 EDA was performed to understand trends, patterns, and relationships within the dataset.
@@ -64,8 +64,11 @@ EDA was performed to understand trends, patterns, and relationships within the d
 - Monthly sales trends
 - Order status distribution
 - Customer spending behavior
-'''
+
 # Example Visualization Code
+```
+python
+
 top_products = df["Product"].value_counts().head(10)
 
 top_products.plot(kind="bar")
@@ -73,7 +76,7 @@ top_products.plot(kind="bar")
 plt.title("Top Selling Products")
 
 plt.show()
-'''
+```
 # 3. SQL Business Analysis
 
 PostgreSQL was used to perform business-focused analysis on the cleaned dataset.
@@ -87,14 +90,14 @@ PostgreSQL was used to perform business-focused analysis on the cleaned dataset.
 - Order status analysis
 
 #Example SQL Query
-'''
+```
 SELECT 
     Product,
     SUM(TotalPrice) AS revenue
 FROM sales_data
 GROUP BY Product
 ORDER BY revenue DESC;
-'''
+```
 # Key Insights
 - Certain products generated significantly higher revenue
 - Customer payment preferences were identified
