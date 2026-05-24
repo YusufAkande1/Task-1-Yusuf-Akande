@@ -36,10 +36,15 @@ Tasks Performed
 - Standardized text columns
 - Validated numerical calculations
 
-# Python Libraries Used
+## Python Libraries Used
+```
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+# Example Cleaning Code
 ```
 python
-import pandas as pd
 
 #Fill missing values
 df["CouponCode"] = df["CouponCode"].fillna("NO COUPON")
@@ -53,7 +58,7 @@ text_cols = df.select_dtypes(include="object").columns
 for col in text_cols:
     df[col] = df[col].str.strip()
 ```
-# 2. Exploratory Data Analysis (EDA)
+## 2. Exploratory Data Analysis (EDA)
 
 EDA was performed to understand trends, patterns, and relationships within the dataset.
 
@@ -77,7 +82,7 @@ plt.title("Top Selling Products")
 
 plt.show()
 ```
-# 3. SQL Business Analysis
+## 3. SQL Business Analysis
 
 PostgreSQL was used to perform business-focused analysis on the cleaned dataset.
 
@@ -89,7 +94,7 @@ PostgreSQL was used to perform business-focused analysis on the cleaned dataset.
 - Customer purchase behavior
 - Order status analysis
 
-#Example SQL Query
+# Example SQL Query
 ```
 SELECT 
     Product,
@@ -98,14 +103,14 @@ FROM sales_data
 GROUP BY Product
 ORDER BY revenue DESC;
 ```
-# Key Insights
+## Key Insights
 - Certain products generated significantly higher revenue
 - Customer payment preferences were identified
 - Sales varied across different months
 - Revenue trends provided useful business insights
 - Data cleaning improved data consistency and reliability
 
-# Skills Demonstrated
+## Skills Demonstrated
 - Data Cleaning
 - Exploratory Data Analysis
 - SQL Querying
@@ -114,13 +119,13 @@ ORDER BY revenue DESC;
 - Python Programming
 - PostgreSQL
 
-# Future Improvements
+## Future Improvements
 - Build an interactive Power BI dashboard
 - Add advanced SQL analysis
 - Perform predictive analytics
 - Automate reporting workflow
 
-# Author
+## Author
 Yusuf Akande
 
 Aspiring Data Analyst passionate about transforming raw data into actionable insights using Python, SQL, Excel, and Power BI.
