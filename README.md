@@ -1,15 +1,22 @@
-# Sales Data Analytics Project
+# Data Cleaning & Preparation Project
 
 ## Project Overview
-This project focuses on cleaning, analyzing, and extracting insights from a sales dataset using Excel, Python, and SQL.
+This project focuses on cleaning and preparing a raw dataset using Excel and Python. 
 
-The workflow covered:
-- Data Cleaning & Preparation
-- Exploratory Data Analysis (EDA)
-- SQL Business Analysis
-- Data Visualization
+The goal of the project was to improve data quality by handling missing values, removing duplicates, correcting data formats, and preparing the dataset for further analysis.
 
-The goal of the project was to transform raw sales data into meaningful business insights that can support data-driven decision-making.
+Clean and reliable data is essential for accurate reporting, analysis, and business decision-making.
+
+---
+## Objectives
+
+The main objectives of this project were to:
+
+- Identify missing or null values
+- Remove duplicate records
+- Correct inconsistent data formats
+- Standardize text values
+- Prepare the dataset for analysis and visualization
 
 ---
 
@@ -18,114 +25,120 @@ The goal of the project was to transform raw sales data into meaningful business
 - Excel
 - Python
 - Pandas
-- Matplotlib
-- Seaborn
-- PostgreSQL (pgAdmin)
-- SQL
+- PyCharm
+- openpyxl
 
-## Project Workflow
+---
 
-### 1. Data Cleaning & Preparation
+## Dataset Description
 
-The raw dataset was cleaned using Excel and Python.
+The dataset contains sales transaction information such as:
 
-Tasks Performed
-- Identified and handled missing values
-- Removed duplicate records
-- Corrected data formats
-- Standardized text columns
-- Validated numerical calculations
+- Order ID
+- Customer ID
+- Product
+- Quantity
+- Unit Price
+- Payment Method
+- Order Status
+- Coupon Code
+- Referral Source
+- Total Price
 
-#### Python Libraries Used
-```
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-```
-#### Example Cleaning Code
-```
-python
+---
 
-##### Fill missing values
+## Data Cleaning Process
+
+### 1. Handling Missing Values
+
+Missing values were identified using both Excel and Python.
+
+#### Example:
+
+```python
+print(df.isnull().sum())
+
+Missing values in the CouponCode column were replaced with:
+
 df["CouponCode"] = df["CouponCode"].fillna("NO COUPON")
+```
+This improved consistency during analysis.
 
-##### Remove duplicates
+### 2. Removing Duplicates
+
+Duplicate records were identified and removed to avoid inaccurate analysis.
+
+#### Example:
+```python
+print(df.duplicated().sum())
+
+#Removing duplicates:
+
 df = df.drop_duplicates()
+```
+### 3. Correcting Data Formats
 
-##### Clean text columns
+The dataset contained columns requiring proper formatting.
+
+#### Date Formatting
+```
+df["Date"] = pd.to_datetime(df["Date"])
+```
+#### Numeric Formatting
+Numeric columns such as:
+
+Quantity
+UnitPrice
+TotalPrice
+
+were validated for proper numerical data types.
+
+### 4. Cleaning Text Data
+
+Text columns were cleaned by removing extra spaces and standardizing formatting.
+
+#### Example:
+```
 text_cols = df.select_dtypes(include="object").columns
 
 for col in text_cols:
     df[col] = df[col].str.strip()
 ```
-### 2. Exploratory Data Analysis (EDA)
+This improved consistency across categorical values.
 
-EDA was performed to understand trends, patterns, and relationships within the dataset.
+### 5. Validation Checks
 
-#### Analysis Conducted
-- Top-selling products
-- Revenue analysis
-- Payment method analysis
-- Monthly sales trends
-- Order status distribution
-- Customer spending behavior
+Additional checks were performed to ensure:
 
-##### Example Visualization Code
-```
-python
+- No remaining missing values
+- No duplicate records
+- Correct data types
+- Accurate numerical calculations
+- Final Output
 
-top_products = df["Product"].value_counts().head(10)
+The cleaned dataset was exported as:
 
-top_products.plot(kind="bar")
+Cleaned_Dataset.xlsx
 
-plt.title("Top Selling Products")
+The dataset is now ready for:
 
-plt.show()
-```
-### 3. SQL Business Analysis
+- Exploratory Data Analysis (EDA)
+- SQL Analysis
+- Power BI Dashboarding
+- Machine Learning
+- Skills Demonstrated
+- Problem Solving
+- Key Learning Outcomes
 
-PostgreSQL was used to perform business-focused analysis on the cleaned dataset.
+Through this project, I gained practical experience in:
 
-#### SQL Analysis Included
-- Total revenue analysis
-- Top-selling products
-- Monthly revenue trends
-- Payment method usage
-- Customer purchase behavior
-- Order status analysis
+- Handling real-world messy data
+- Preparing datasets for analysis
+- Using Python for data cleaning automation
+- Improving data quality and consistency
 
-##### Example SQL Query
-```
-SELECT 
-    Product,
-    SUM(TotalPrice) AS revenue
-FROM sales_data
-GROUP BY Product
-ORDER BY revenue DESC;
-```
-### Key Insights
-- Certain products generated significantly higher revenue
-- Customer payment preferences were identified
-- Sales varied across different months
-- Revenue trends provided useful business insights
-- Data cleaning improved data consistency and reliability
+## Author
 
-### Skills Demonstrated
-- Data Cleaning
-- Exploratory Data Analysis
-- SQL Querying
-- Data Visualization
-- Business Insight Generation
-- Python Programming
-- PostgreSQL
-
-### Future Improvements
-- Build an interactive Power BI dashboard
-- Add advanced SQL analysis
-- Perform predictive analytics
-- Automate reporting workflow
-
-### Author
 Yusuf Akande
-Aspiring Data Analyst passionate about transforming raw data into actionable insights using Python, SQL, Excel, and Power BI.
 
+Aspiring Data Analyst passionate about data cleaning, data analysis, SQL, Python, and Power BI.
